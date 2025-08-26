@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interior A's | 床材施工</title>
+  <style>
+    :root{
+      --bg:#f7f7f7;
+      --text:#333;
+      --ink:#111;
+      --accent:#8a7abf; /* ほんの少しだけ上品さ */
+      --card:#ffffff;
+      --line:#e5e5e5;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Hiragino Sans","Yu Gothic Medium","Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.75;
+    }
+    /* header */
+    header{
+      background:var(--ink);
+      color:#fff;
+      text-align:center;
+      padding:16px 20px 12px;
+    }
+    header .logo{
+      height:60px;
+      vertical-align:middle;
+    }
+    nav{
+      margin-top:10px;
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      margin:0 14px;
+      font-size:0.95rem;
+    }
 
+    /* hero */
+    .hero{
+      position:relative;
+      min-height:48vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      overflow:hidden;
+      background:#000;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:url('IMG_1297.jpeg') center/cover no-repeat;
+      filter:brightness(60%);
+    }
+    .hero-inner{
+      position:relative; z-index:1; color:#fff; padding:24px;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:clamp(28px,5.5vw,44px);
+      letter-spacing:.04em;
+    }
+    .hero p{
+      margin:0;
+      opacity:.95;
+    }
+
+    /* sections */
+    .section{
+      max-width:1080px; margin:0 auto; padding:64px 20px;
+    }
+    .section h2{
+      text-align:center; margin:0 0 28px;
+      font-size:clamp(22px,4.5vw,30px);
+      display:inline-block;
+      padding-bottom:8px;
+      border-bottom:2px solid var(--line);
+    }
+    .lead{
+      text-align:center; max-width:800px; margin:0 auto 10px;
+    }
+
+    /* services (床材のみ) */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:22px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      max-width:780px; margin:0 auto;
+    }
+    .card h3{ margin-top:0; }
+    .card ul{
+      margin:10px 0 0; padding-left:1.1em;
+    }
+
+    /* gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:20px;
+    }
+    .gallery img{
+      width:100%; height:220px; object-fit:cover;
+      border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,.12);
+      background:#ddd;
+    }
+    .caption{ font-size:.95rem; margin-top:6px; color:#666; }
+
+    /* contact */
+    .contact{
+      text-align:center;
+    }
+    .contact a{
+      color:var(--accent); text-decoration:none; font-weight:700;
+    }
+
+    /* footer */
+    footer{
+      background:var(--ink); color:#fff; text-align:center; padding:22px;
+    }
+
+    @media (max-width:640px){
+      nav a{ margin:0 10px; }
+      .hero{ min-height:42vh; }
+      .gallery img{ height:200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <!-- ロゴ画像差し替え：IMG_0512.jpeg -->
+    <img src="IMG_0512.jpeg" alt="Interior A's ロゴ" class="logo" />
+    <nav>
+      <a href="#about">私たちについて</a>
+      <a href="#services">サービス</a>
+      <a href="#works">施工実績</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="メインビジュアル">
+    <!-- 背景は CSS で IMG_1297.jpeg を使用 -->
+    <div class="hero-inner">
+      <h1>Interior A's</h1>
+      <p>空間を彩る、上質な床材施工</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>私たちについて</h2>
+    <p class="lead">
+      Interior A's は、オフィス・店舗・住宅の <strong>床材施工専門</strong> の内装業者です。<br>
+      高級感と居心地の良さを両立させる “インテリアの質” にこだわり、丁寧な施工で空間価値を高めます。
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <h2>サービス内容</h2>
+    <div class="card">
+      <h3>床材施工（専門）</h3>
+      <p>空間の用途や雰囲気、耐久性などを踏まえ、最適な床材と納まりをご提案します。</p>
+      <ul>
+        <li>タイルカーペット施工</li>
+        <li>フローリング施工</li>
+        <li>クッションフロア施工</li>
+        <li>塩ビタイル施工</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section id="works" class="section">
+    <h2>施工実績（サンプル）</h2>
+
+    <div class="gallery">
+      <!-- 画像はそのままファイル名で同階層に置いてください -->
+      <figure>
+        <img src="IMG_0915.jpeg" alt="施工例 タイルカーペット">
+        <figcaption class="caption">タイルカーペット / オフィス施工</figcaption>
+      </figure>
+      <figure>
+        <img src="IMG_0480.jpeg" alt="施工例 フローリング">
+        <figcaption class="caption">フローリング / 住宅リビング</figcaption>
+      </figure>
+      <figure>
+        <img src="IMG_1297.jpeg" alt="施工例 クッションフロア">
+        <figcaption class="caption">クッションフロア / 施設共用部</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <h2>お問い合わせ</h2>
+    <p>お見積もり・ご相談は無料です。お気軽にご連絡ください。</p>
+    <p><strong>電話：</strong>080-7255-4114</p>
+    <p><strong>メール：</strong><a href="mailto:interior.a.s.04@gmail.com">interior.a.s.04@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <small>&copy; 2025 Interior A's. All Rights Reserved.</small>
+  </footer>
+
+</body>
+</html>
