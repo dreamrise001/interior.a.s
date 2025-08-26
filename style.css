@@ -1,0 +1,165 @@
+:root{
+  --bg:#fffaf4;            /* ごく薄いアイボリー */
+  --ink:#2e2e2e;
+  --muted:#6d6d6d;
+  --gold:#c8a96a;          /* 上品ゴールド */
+  --line:#e9e2d5;
+  --panel:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.8;
+}
+
+/* Utility */
+.container{width:min(1100px,90%);margin:auto}
+.narrow{width:min(760px,90%);margin:auto}
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.02em;
+  transition:.2s;
+}
+.btn:hover{opacity:.9}
+.btn.ghost{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--ink);
+}
+.btn-ghost{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--ink);
+  text-decoration:none;
+  color:var(--ink);
+}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:saturate(160%) blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex; align-items:center; gap:16px; padding:10px 0}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink)}
+.logo{width:40px; height:40px; object-fit:cover; border-radius:8px; border:1px solid var(--line)}
+.brand-text{font-weight:700; letter-spacing:.02em}
+
+.nav{margin-left:auto; display:flex; gap:22px; align-items:center}
+.nav a{color:var(--ink); text-decoration:none}
+.nav-toggle{display:none; margin-left:auto; background:none; border:0; font-size:22px}
+
+/* Hero */
+.hero{
+  position:relative;
+  padding:80px 0 56px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.9)),
+    url('images/hero.jpg') center/cover no-repeat;
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{text-align:center}
+.hero-title{
+  font-size:clamp(28px,5vw,42px);
+  margin:0 0 8px;
+  letter-spacing:.04em;
+}
+.hero-lead{color:var(--muted); margin:0 0 16px}
+.hero-cta{display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:18px 0}
+.hero-badges{display:flex; justify-content:center; gap:10px; list-style:none; padding:0; margin:12px 0 0}
+.hero-badges li{font-size:14px}
+.hero-badges span{border:1px solid var(--line); padding:6px 10px; border-radius:999px; background:var(--panel)}
+
+/* Section */
+.section{padding:72px 0}
+.section.alt{background:#fff;border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.sec-title{
+  text-align:center; font-size:28px; margin:0 0 8px;
+  letter-spacing:.04em; color:#1f1f1f;
+}
+.sec-lead{color:var(--muted); text-align:center; margin:0 0 26px}
+
+/* Cards */
+.cards{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(3,1fr);
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+  min-height:140px;
+}
+.card h3{margin:0 0 8px}
+.card p{margin:0; color:var(--muted)}
+
+/* Gallery */
+.gallery{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(3,1fr);
+}
+.work{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+}
+.work img{width:100%; height:220px; object-fit:cover; display:block}
+.work figcaption{padding:12px 14px; font-size:14px; color:var(--muted)}
+
+/* Company */
+.company{
+  display:grid; gap:8px;
+  border:1px solid var(--line);
+  border-radius:14px; background:var(--panel);
+  padding:16px;
+}
+.company div{display:grid; grid-template-columns:120px 1fr; gap:10px; padding:8px 0; border-bottom:1px dashed var(--line)}
+.company div:last-child{border-bottom:0}
+.company dt{color:#666}
+.company dd{margin:0}
+
+/* Contact */
+.contact-form{
+  background:var(--panel); border:1px solid var(--line); border-radius:14px;
+  padding:18px;
+}
+.contact-form .grid{
+  display:grid; gap:12px; grid-template-columns:1fr 1fr; margin-bottom:12px;
+}
+.contact-form label{display:block; font-size:14px}
+.contact-form input, .contact-form textarea{
+  width:100%; margin-top:6px; padding:12px 14px; font-size:16px;
+  border:1px solid var(--line); border-radius:10px; background:#fafafa;
+}
+.note{color:var(--muted); font-size:13px; margin-top:10px}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line); padding:20px 0; background:#fff}
+.footer-inner{display:flex; align-items:center; justify-content:space-between}
+.to-top{color:var(--ink); text-decoration:none; border:1px solid var(--line); padding:6px 10px; border-radius:999px}
+
+/* Responsive */
+@media (max-width: 960px){
+  .cards, .gallery{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 680px){
+  .nav{display:none; position:absolute; right:5%; top:60px; background:#fff; border:1px solid var(--line); padding:12px; border-radius:12px; flex-direction:column}
+  .nav.open{display:flex}
+  .nav-toggle{display:block}
+  .cards, .gallery{grid-template-columns:1fr}
+  .contact-form .grid{grid-template-columns:1fr}
+  .brand-text{display:none} /* スマホはアイコン+名称省略でスッキリ */
+}
