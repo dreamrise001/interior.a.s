@@ -1,8 +1,20 @@
-body {
+/* ====== 共通 ====== */
+* {
   margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
   color: #333;
-  line-height: 1.6;
+  background: #fdfdfd;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .container {
@@ -11,7 +23,28 @@ body {
   margin: 0 auto;
 }
 
-/* ===== Header ===== */
+.section {
+  padding: 80px 0;
+}
+
+.section.alt {
+  background: #f7f7f7;
+}
+
+.sec-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sec-lead {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* ====== Header ====== */
 .site-header {
   background: #fff;
   border-bottom: 1px solid #eee;
@@ -22,126 +55,226 @@ body {
 
 .header-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  justify-content: space-between;
+  padding: 12px 0;
 }
 
-.site-header .brand {
+.brand {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
-.site-header .logo {
-  height: 52px;
-  margin-right: 14px;
+.brand .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
-.site-header .brand-text {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #222;   /* 濃いグレー */
-  letter-spacing: 0.05em;
-  white-space: nowrap;
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
 }
 
-/* ===== Hero ===== */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #a67ecf; /* 紫がかったアクセント */
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ====== Hero ====== */
 .hero {
-  background: url("images/hero.jpg") center/cover no-repeat;
-  color: #fff;
+  background: linear-gradient(to bottom, #f8f8f8, #f2f2f2);
   text-align: center;
   padding: 100px 20px;
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
 }
 
 .hero-lead {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #444;
 }
 
-.hero-cta .btn {
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #c1a261; /* 落ち着いた濃いめゴールド */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #a4894e;
+}
+
+.btn.ghost {
+  background: #fff;
+  color: #333;
+  border: 2px solid #333;
+}
+
+.btn.ghost:hover {
   background: #333;
   color: #fff;
-  padding: 10px 20px;
-  margin-right: 10px;
-  text-decoration: none;
-  border-radius: 4px;
 }
 
-.hero-cta .btn.ghost {
-  background: transparent;
-  border: 1px solid #fff;
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
-/* ===== Sections ===== */
-.section {
-  padding: 60px 20px;
+.hero-badges li span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  background: #fff;
 }
 
-.section.alt {
-  background: #f9f9f9;
-}
-
-.sec-title {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.sec-lead {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #555;
-}
-
-/* ===== Cards ===== */
+/* ====== Services ====== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
 .card {
   background: #fff;
+  padding: 25px;
   border: 1px solid #eee;
-  padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
-/* ===== Gallery ===== */
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* ====== Works ====== */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+}
+
+.work {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
 .work img {
   width: 100%;
-  border-radius: 6px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .work figcaption {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #555;
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #444;
 }
 
-/* ===== Footer ===== */
+/* ====== Company ====== */
+#company ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#company li {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* ====== Contact ====== */
+#contact {
+  text-align: center;
+}
+
+#contact .btn {
+  margin-top: 20px;
+}
+
+/* ====== Footer ====== */
 .site-footer {
-  background: #222;
-  color: #fff;
   text-align: center;
   padding: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 0.9rem;
 }
 
-.site-footer .to-top {
-  display: inline-block;
-  margin-left: 15px;
-  color: #fff;
-  text-decoration: none;
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    color: #333;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
 }
