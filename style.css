@@ -1,1 +1,167 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  color: #333;
+  background: #fafafa;
+}
 
+/* ===== Header ===== */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #444;   /* 濃いグレー */
+  letter-spacing: 1px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: #fdfdfd;
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.hero-lead {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* ボタン */
+.btn, .btn-ghost {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn {
+  background: #c2a46b;
+  color: #fff;
+}
+.btn.ghost {
+  border: 2px solid #333;
+  color: #333;
+  background: transparent;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 60px 20px;
+}
+.section.alt {
+  background: #f5f5f5;
+}
+.sec-title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.sec-lead {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex: 1;
+  text-align: center;
+}
+
+/* ===== Works Gallery ===== */
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.work img {
+  width: 100%;
+  border-radius: 8px;
+}
+.work figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #555;
+}
+
+/* ===== Company ===== */
+.company {
+  display: grid;
+  gap: 10px;
+}
+.company dt {
+  font-weight: bold;
+  width: 90px;
+  float: left;
+}
+.company dd {
+  margin: 0 0 10px 100px;
+}
+
+/* ===== Contact ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.site-footer .to-top {
+  color: #c2a46b;
+  margin-left: 10px;
+}
